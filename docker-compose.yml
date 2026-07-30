@@ -1,0 +1,14 @@
+version: '4.0'
+services:
+  db:
+    image: mysql
+    container_name: Help_Desk_Enterprise
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3309:3306"
+    volumes:
+      - gabriel_data:/var/lib/mysql
+
+volumes:
+  gabriel_data:
