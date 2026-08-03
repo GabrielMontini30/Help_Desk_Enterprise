@@ -1,5 +1,5 @@
 package api.util;
 
 public enum Role {
-    CLIENT,ADMIN,TECHNICIAN,MANAGER;
+    CLIENT,ADMIN,TECHNICIAN;
 }

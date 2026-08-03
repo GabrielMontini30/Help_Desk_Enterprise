@@ -40,6 +40,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(TicketController.class)
 @AutoConfigureMockMvc(addFilters = false)
 public class TicketControllerTest {
+
     @Autowired
     MockMvc mockMvc;
 
@@ -59,7 +60,7 @@ public class TicketControllerTest {
     UserDetailsServices userDetailsServices;
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when listing all tickets")
     void listAll_ShouldReturn200() throws Exception {
         TicketResponseDto ticketResponseDto= DtoFactory.TicketResponseDto();
 
@@ -74,7 +75,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when ticket exists")
     void findById_ShouldReturn200() throws Exception {
         TicketResponseDto ticketResponseDto= DtoFactory.TicketResponseDto();
 
@@ -87,7 +88,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 201 when ticket is created")
     void create_ShouldReturn201() throws Exception {
         TicketRequestDto ticketRequestDto= DtoFactory.createTicketRequest();
         TicketResponseDto ticketResponseDto= DtoFactory.TicketResponseDto();
@@ -104,7 +105,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when ticket is updated")
     void update_ShouldReturn200() throws Exception {
         Ticket ticket= TicketFactory.createValidSavedTicket();
         TicketUpdateDto ticketUpdateDto= DtoFactory.createTicketUpdateRequest();
@@ -122,7 +123,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when ticket status is changed")
     void changeStatus_ShouldReturn204() throws Exception {
         TicketStatusUpdateDto statusUpdateDto= DtoFactory.createTicketStatusUpdate();
         Ticket ticket=TicketFactory.createValidSavedTicket();
@@ -136,7 +137,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when ticket is assigned")
     void assignTicket_ShouldReturn200() throws Exception {
         TicketAssignDto ticketAssignDto= DtoFactory.createTicketAssign();
         TicketResponseDto ticketResponseDto=DtoFactory.TicketResponseDto();
@@ -155,7 +156,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when ticket is closed")
     void closeTicket_ShouldReturn204() throws Exception {
         Ticket ticket=TicketFactory.createValidSavedTicket();
 
@@ -164,7 +165,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when listing logged user tickets")
     void listMyTickets_ShouldReturn200() throws Exception {
         TicketResponseDto ticketResponseDto=DtoFactory.TicketResponseDto();
 
@@ -180,7 +181,7 @@ public class TicketControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when listing assigned tickets")
     void listAssignedTickets_ShouldReturn200() throws Exception {
         TicketResponseDto ticketResponseDto=DtoFactory.TicketResponseDto();
 

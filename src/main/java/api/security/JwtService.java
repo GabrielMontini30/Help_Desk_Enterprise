@@ -28,7 +28,9 @@ public class JwtService {
     }
 
     public boolean verifyToken(String token){
+
         Algorithm algorithm = Algorithm.HMAC256(secret);
+
         try {
             JWT.require(algorithm)
                     .withIssuer("api-auth")

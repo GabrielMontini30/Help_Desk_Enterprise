@@ -57,7 +57,7 @@ public class UserControllerTest {
     UserDetailsServices userDetailsServices;
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when listing all users")
     void listAll_ShouldReturn200() throws Exception {
 
         UserResponseDto responseDto= DtoFactory.userResponseDto();
@@ -73,7 +73,7 @@ public class UserControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when user exists")
     void findById_ShouldReturn200() throws  Exception{
 
         UserResponseDto user= DtoFactory.userResponseDto();
@@ -86,7 +86,7 @@ public class UserControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when changing user role")
     void updateRole_ShouldReturn200() throws Exception {
         User user= UserFactory.createValidUser();
         UserRoleUpdateDto roleUpdateDto= DtoFactory.createRoleUpdate();
@@ -103,7 +103,7 @@ public class UserControllerTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("Should return 200 when changing user status")
     void updateStatus_ShouldReturn200()throws Exception{
         User user= UserFactory.createValidUser();
         UserStatusUpdateDto statusUpdateDto= DtoFactory.createStatusUpdate();
