@@ -4,7 +4,6 @@ import api.util.Category;
 import api.util.Priority;
 import api.util.TicketStatus;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

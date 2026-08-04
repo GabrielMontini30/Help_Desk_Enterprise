@@ -4,7 +4,6 @@ import api.util.Category;
 import api.util.Priority;
 import api.util.TicketStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotNull;
 
 public record TicketFilterDto(
         @Schema(description = "ticket status ", example ="CLOSED")

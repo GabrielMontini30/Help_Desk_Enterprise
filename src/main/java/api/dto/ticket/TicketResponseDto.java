@@ -1,6 +1,5 @@
 package api.dto.ticket;
 
-import api.entity.User;
 import api.util.Category;
 import api.util.Priority;
 import api.util.TicketStatus;

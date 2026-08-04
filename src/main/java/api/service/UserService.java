@@ -7,7 +7,6 @@ import api.entity.User;
 import api.exception.ResourceNotFoundException;
 import api.mapper.UserMapper;
 import api.repository.UserRepository;
-import api.util.Role;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
