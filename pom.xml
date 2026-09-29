@@ -60,8 +60,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>3.0.3</version>
-            <scope>compile</scope>
+            <version>2.5.0</version>
         </dependency>
 
 
@@ -101,7 +100,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- TESTES -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

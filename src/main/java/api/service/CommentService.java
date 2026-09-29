@@ -76,7 +76,7 @@ public class CommentService {
             throw new TicketClosedException("the ticket is closed.");
         }
 
-        if(!getLoggedUser().getId().equals(commentToUpdate.getAuthor().getId()) && getLoggedUser().getRole()!=Role.ADMIN)  {
+        if(!getLoggedUser().getId().equals(commentToUpdate.getAuthor().getId()) && getLoggedUser().getRole()!= Role.ADMIN)  {
             throw new UnauthorizedActionException("You are not authorization to edit a comment");
         }
 

@@ -1,8 +1,12 @@
 package api.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import api.util.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,10 +32,10 @@ public class User implements UserDetails {
 
     private String name;
 
-    @Email
     @Column(unique = true)
     private String email;
 
+    @JsonIgnore
     private String password;
 
     @Enumerated (EnumType.STRING)
@@ -47,12 +51,15 @@ public class User implements UserDetails {
     @CreationTimestamp
     private LocalDateTime updatedAt;
 
+    @JsonIgnore
     @OneToMany (mappedBy = "openedBy")
     private List<Ticket> openedTickets;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "assignedTo")
     private List<Ticket> assignedTickets;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "author")
     private List<Comment> comments;
 
