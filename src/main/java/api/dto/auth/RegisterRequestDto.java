@@ -14,10 +14,9 @@ public record RegisterRequestDto(
 
         @Schema(description = "user email", example = "emailtest@gmail.com")
         @Email
-        
         String email,
 
-        @Schema(description = "user password", example = "test123")
+        @Schema(description = "user password", example = "test123@")
         @NotBlank(message = "the password not blank")
         @Size(min = 6, max = 30)
         @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#]).+$")
