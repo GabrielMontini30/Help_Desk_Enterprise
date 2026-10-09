@@ -23,7 +23,7 @@ public class JwtService {
                 .withIssuer("api-auth")
                 .withSubject(email)
                 .withIssuedAt(new Date(System.currentTimeMillis()))
-                .withExpiresAt(new Date(System.currentTimeMillis()+ 24*60*60*10000))
+                .withExpiresAt(new Date(System.currentTimeMillis()+ 60*60*1000))
                 .sign(algorithm);
     }
 
