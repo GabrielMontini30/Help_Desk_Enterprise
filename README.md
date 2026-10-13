@@ -17,19 +17,13 @@ The application allows:
 
 ## Technologies
 
-- Java 21
-- Spring Boot
-- Spring Security
-- JWT
-- Spring Data JPA
-- MySQL
-- Hibernate
-- MapStruct
-- Lombok
-- Swagger/OpenAPI
-- JUnit 5
-- Mockito
-- Maven
+- **Java** — linguagem principal.
+- **Spring Boot** — estrutura da aplicação Back-end.
+- **Spring Security** — autenticação e autorização.
+- **JWT** — geração e validação de tokens de autenticação.
+- **Spring Data JPA / Hibernate** — persistência e mapeamento objeto-relacional.
+- **MySql** — banco de dados.
+- **Docker** — containerização da aplicação e/ou de seus serviços, conforme a configuração do projeto.
 
 ## Architecture
 
