@@ -114,7 +114,8 @@ public class TicketController {
     }
 
     @GetMapping("/my")
-    @Operation(summary = "List my tickets", description = "Returns a paginated list of my tickets.")    @ApiResponses({
+    @Operation(summary = "List my tickets", description = "Returns a paginated list of my tickets.")
+    @ApiResponses({
             @ApiResponse(responseCode = "200", description = "return my tickets"),
             @ApiResponse(responseCode = "401", description = "Authentication required"),
             @ApiResponse(responseCode = "403", description = "Access denied"),
@@ -125,7 +126,8 @@ public class TicketController {
     }
 
     @GetMapping("/assigned")
-    @Operation(summary = "List assigned tickets", description = "Returns a paginated list of assigned tickets.")    @ApiResponses({
+    @Operation(summary = "List assigned tickets", description = "Returns a paginated list of assigned tickets.")
+    @ApiResponses({
             @ApiResponse(responseCode = "200", description = "return assigned tickets"),
             @ApiResponse(responseCode = "401", description = "Authentication required"),
             @ApiResponse(responseCode = "403", description = "Access denied"),

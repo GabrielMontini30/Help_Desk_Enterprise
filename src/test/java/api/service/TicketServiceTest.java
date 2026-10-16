@@ -179,6 +179,11 @@ public class TicketServiceTest {
 
         TicketResponseDto response = DtoFactory.TicketResponseDto();
 
+        User userLogged = ticket.getOpenedBy();
+
+        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(userLogged, null, userLogged.getAuthorities()));
+
+
         given(ticketRepository.findById(ticket.getId())).willReturn(Optional.of(ticket));
         given(ticketMapper.entityToResponse(ticket)).willReturn(response);
         given(ticketRepository.save(ticket)).willReturn(ticket);

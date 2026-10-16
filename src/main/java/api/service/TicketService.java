@@ -70,6 +70,22 @@ public class TicketService {
 
         validateTicketNotClosed(ticketToUpdate);
 
+        User userLogged = getLoggedUser();
+
+        boolean isAssignedTechnician =
+                userLogged.getRole() == Role.TECHNICIAN
+                        && ticketToUpdate.getAssignedTo() != null
+                        && userLogged.getId().equals(
+                        ticketToUpdate.getAssignedTo().getId()
+                );
+
+        if (!userLogged.getId().equals(ticketToUpdate.getOpenedBy().getId())
+                && userLogged.getRole() != Role.ADMIN
+                && !isAssignedTechnician) {
+
+            throw new UnauthorizedActionException("You are not authorized to update this ticket");
+        }
+
         ticketToUpdate.setTitle(dto.title());
         ticketToUpdate.setCategory(dto.category());
         ticketToUpdate.setDescription(dto.description());
@@ -143,6 +159,7 @@ public class TicketService {
         return ticketList.map(ticketMapper::entityToResponse);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'TECHNICIAN')")
     public Page<TicketResponseDto> listAssignedTickets(Pageable pageable) {
 
         Page<Ticket> assignedTickets = repository.findByAssignedTo(getLoggedUser(), pageable);

@@ -44,7 +44,7 @@ public class DtoFactory {
 
         Ticket ticket= TicketFactory.createValidSavedTicket();
 
-        User user= UserFactory.createClient();
+        User user= UserFactory.createTechnician();
 
         TicketResponseDto ticketResponseDto = new TicketResponseDto(1L,
                 "Computer problem",

@@ -62,7 +62,7 @@ public class TicketFactory {
                 .status(TicketStatus.OPEN)
                 .priority(Priority.HIGH)
                 .category(Category.HARDWARE)
-                .openedBy(UserFactory.createClient())
+                .openedBy(UserFactory.createTechnician())
                 .build();
     }
 
