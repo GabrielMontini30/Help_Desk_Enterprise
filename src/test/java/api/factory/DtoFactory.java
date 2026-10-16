@@ -8,10 +8,7 @@ import api.dto.user.UserRoleUpdateDto;
 import api.dto.user.UserStatusUpdateDto;
 import api.entity.Ticket;
 import api.entity.User;
-import api.util.Category;
-import api.util.Priority;
-import api.util.Role;
-import api.util.TicketStatus;
+import api.util.*;
 
 import java.time.LocalDateTime;
 
@@ -23,7 +20,7 @@ public class DtoFactory {
                 "Gabriel Test",
                 "gabriel@test.com",
                 "123456",
-                "IT",
+                Department.IT,
                 Role.CLIENT
         );
 
@@ -36,7 +33,7 @@ public class DtoFactory {
                 "Gabriel Test",
                 "gabriel@test.com",
                 Role.CLIENT,
-                "TI",
+                Department.IT,
                 true,
                 LocalDateTime.now());
 

@@ -1,6 +1,7 @@
 package api.factory;
 
 import api.entity.User;
+import api.util.Department;
 import api.util.Role;
 
 public class UserFactory {
@@ -12,7 +13,7 @@ public class UserFactory {
                 .email("gabriel@test.com")
                 .password("123456")
                 .role(Role.CLIENT)
-                .department("TI")
+                .department(Department.IT)
                 .active(true)
                 .build();
     }
@@ -25,7 +26,7 @@ public class UserFactory {
                 .email("client@test.com")
                 .password("123456")
                 .role(Role.CLIENT)
-                .department("Support")
+                .department(Department.SUPPORT)
                 .active(true)
                 .build();
 
@@ -40,7 +41,7 @@ public class UserFactory {
                 .email("technician@test.com")
                 .password("123456")
                 .role(Role.TECHNICIAN)
-                .department("Technical")
+                .department(Department.IT)
                 .active(true)
                 .build();
 
@@ -53,7 +54,7 @@ public class UserFactory {
                 .email("technician@test.com")
                 .password("123456")
                 .role(Role.TECHNICIAN)
-                .department("Technical")
+                .department(Department.IT)
                 .active(true)
                 .build();
 
@@ -67,7 +68,7 @@ public class UserFactory {
                 .email("admin@test.com")
                 .password("123456")
                 .role(Role.ADMIN)
-                .department("Management")
+                .department(Department.IT)
                 .active(true)
                 .build();
 

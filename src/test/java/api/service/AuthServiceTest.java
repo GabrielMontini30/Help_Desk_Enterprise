@@ -10,6 +10,7 @@ import api.factory.UserFactory;
 import api.mapper.UserMapper;
 import api.repository.UserRepository;
 import api.security.JwtService;
+import api.util.Department;
 import api.util.Role;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -61,9 +62,9 @@ public class AuthServiceTest {
     @DisplayName("Should register a new user when request is valid")
     void register_WhenRequestIsValid_ShouldRegisterUser(){
 
-        RegisterRequestDto requestDto= new RegisterRequestDto("Test", "test123@gmail.com", "teste123", "TI", Role.CLIENT);
+        RegisterRequestDto requestDto= new RegisterRequestDto("Test", "test123@gmail.com", "teste123", Department.IT, Role.CLIENT);
 
-        RegisterResponseDto responseDto= new RegisterResponseDto("Test", "test123@gmail.com", "TI");
+        RegisterResponseDto responseDto= new RegisterResponseDto("Test", "test123@gmail.com", Department.IT);
         User user= UserFactory.createValidUser();
 
 
@@ -92,7 +93,7 @@ public class AuthServiceTest {
     @DisplayName("Should throw EmailAlreadyExistsException when email already exists")
     void register_WhenEmailAlreadyExists_ShouldThrowEmailAlreadyExistsException(){
 
-        RegisterRequestDto requestDto= new RegisterRequestDto("Test", "test123@gmail.com", "teste123", "TI", Role.CLIENT);
+        RegisterRequestDto requestDto= new RegisterRequestDto("Test", "test123@gmail.com", "teste123", Department.IT, Role.CLIENT);
 
         given(repository.existsByEmail(requestDto.email())).willReturn(true);
 

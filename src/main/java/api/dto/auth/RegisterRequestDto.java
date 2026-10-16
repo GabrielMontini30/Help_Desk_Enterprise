@@ -1,5 +1,6 @@
 package api.dto.auth;
 
+import api.util.Department;
 import api.util.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
@@ -22,9 +23,8 @@ public record RegisterRequestDto(
         @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#]).+$")
         String password,
 
-        @Schema(description = "user department", example = "TI")
-        @NotBlank(message = "the department not blank")
-        String department,
+        @Schema(description = "user department", example = "IT")
+        Department department,
 
         @Schema(description = "user role", example = "CLIENT")
         Role role

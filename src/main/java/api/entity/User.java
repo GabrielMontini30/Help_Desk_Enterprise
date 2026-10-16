@@ -1,5 +1,6 @@
 package api.entity;
 
+import api.util.Department;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import api.util.Role;
 import jakarta.persistence.*;
@@ -41,7 +42,8 @@ public class User implements UserDetails {
     @Enumerated (EnumType.STRING)
     private Role role;
 
-    private String department;
+    @Enumerated(EnumType.STRING)
+    private Department department;
 
     private boolean active;
 

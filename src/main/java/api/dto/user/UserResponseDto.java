@@ -1,5 +1,6 @@
 package api.dto.user;
 
+import api.util.Department;
 import api.util.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -19,7 +20,7 @@ public record UserResponseDto(
         Role role,
 
         @Schema(description = "user department", example = "TI")
-        String department,
+        Department department,
 
         @Schema(description = "user is active", example = "true")
         Boolean active,

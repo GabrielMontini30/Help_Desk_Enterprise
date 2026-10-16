@@ -9,6 +9,7 @@ import api.security.JwtFilter;
 import api.security.JwtService;
 import api.security.UserDetailsServices;
 import api.service.AuthService;
+import api.util.Department;
 import api.util.Role;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -68,9 +69,9 @@ public class AuthControllerTest {
     @Test
     @DisplayName("Should return 201 when register credentials are valid")
     void register_ShouldReturn201() throws Exception {
-        RegisterRequestDto requestDto= new RegisterRequestDto("Test", "test123@gmail.com", "teste123", "TI", Role.CLIENT);
+        RegisterRequestDto requestDto= new RegisterRequestDto("Test", "test123@gmail.com", "Teste123@", Department.IT, Role.CLIENT);
 
-        RegisterResponseDto responseDto= new RegisterResponseDto("Test", "test123@gmail.com", "TI");
+        RegisterResponseDto responseDto= new RegisterResponseDto("Test", "test123@gmail.com", Department.IT);
 
         BDDMockito.given(authService.register(requestDto)).willReturn(responseDto);
 
