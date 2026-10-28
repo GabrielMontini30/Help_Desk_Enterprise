@@ -4,7 +4,7 @@ services:
     image: mysql
     container_name: Help_Desk_Enterprise
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3309:3306"
     volumes:

@@ -56,6 +56,7 @@ public class TicketService {
         return ticketMapper.entityToResponse(ticket);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'TECHNICIAN')")
     public Page<TicketResponseDto> listAll(Pageable pageable){
         Page<Ticket> allTicket = repository.findAll(pageable);
 
